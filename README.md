@@ -1,4 +1,4 @@
-CS 7641 Spring 2017 Assignment 1
+#CS 7641 Spring 2017 Assignment 1
 
 This file describes the structure of this assignment submission. 
 The assignment code is written in Python 3.5.1. Library dependencies are: 
