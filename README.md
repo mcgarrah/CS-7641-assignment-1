@@ -1,4 +1,11 @@
-#CS 7641 Spring 2017 Assignment 1
+# CS7641 Machine Learning Assignment 1
+
+Template from https://github.com/JonathanTay/CS-7641-assignment-1
+Modifying to use a different dataset
+
+## Spring 2018 
+
+## Requirements
 
 This file describes the structure of this assignment submission. 
 The assignment code is written in Python 3.5.1. Library dependencies are: 
@@ -8,6 +15,8 @@ pandas 0.19.2
 matplotlib 1.5.3
 
 Other libraries used are part of the Python standard library. 
+
+## Contents
 
 The main folder contains the following files:
 1. adult.*, madelon_*.* -> These are the original datasets, as downloaded from the UCI Machine Learning Repository http://archive.ics.uci.edu/ml/
@@ -22,6 +31,8 @@ The main folder contains the following files:
 10. SVM.py -> Code for the Support Vector Machine (SVM) experiments
 11. plotter.py -> Code to plot the learning and validation curves in the report
 12. README.txt -> This file
+
+## Outputs
 
 There is also a subfolder called "output". This folder contains the experimental results. 
 Here, I use DT/ANN/BT/KNN/SVM_Lin/SVM_RBF to refer to decision trees, artificial neural networks, boosted trees, K-nearest neighbours, linear and RBF kernel SVMs respectively. A suffix of _OF indicates a deliberately "overfitted" version of the model where regularisation is turned off.
