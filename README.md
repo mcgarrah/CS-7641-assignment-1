@@ -1,25 +1,40 @@
 # CS7641 Machine Learning Assignment 1
 
-Template from https://github.com/JonathanTay/CS-7641-assignment-1
-Modifying to use a different dataset
+This base code comes from the template provided by Jonathan Tay from his repository at https://github.com/JonathanTay/CS-7641-assignment-1 which has been modified to use a different dataset.
+
+Initial testing of the base code used his datasets as shown below then modified to use a different dataset.
+
+This file describes the structure of this assignment submission. 
 
 ## Spring 2018 
 
+This is the code for Assignment 1 for the OMSCS CS7641 Machine Learning course taught in the Spring of 2018.
+
 ## Requirements
 
-This file describes the structure of this assignment submission. 
-The assignment code is written in Python 3.5.1. Library dependencies are: 
-scikit-learn 0.18.1
-numpy 0.11.1
-pandas 0.19.2
-matplotlib 1.5.3
+The assignment code was originally written in Python 3.5.1 but for this assignment it is being run in Python 3.6.0 on Microsoft Windows using the PyCharm IDE.
 
+### Python Environment
+
+- Python 3.6.0 for Windows x86-64 retrieved from https://www.python.org/downloads/windows/ Dec 2016.
+- PyCharm 2017.3.3 Professional Edition IDE
+
+### Libraries
+
+Library dependencies are: 
+ - scikit-learn 0.19.1
+ - numpy 0.14.0
+ - pandas 0.22.0
+ - matplotlib 2.1.2
+ 
 Other libraries used are part of the Python standard library. 
 
 ## Contents
 
 The main folder contains the following files:
-1. adult.*, madelon_*.* -> These are the original datasets, as downloaded from the UCI Machine Learning Repository http://archive.ics.uci.edu/ml/
+1. adult.*, madelon_*.* -> These are the original datasets, as downloaded from the UCI Machine Learning Repository
+ - https://archive.ics.uci.edu/ml/datasets/adult
+ - https://archive.ics.uci.edu/ml/datasets/madelon
 2. datasets.hdf -> A pre-processed/cleaned up copy of the datasets. This file is created by "parse data.py"
 3. "parse data.py" -> This python script pre-processes the original UCI ML repo files into a cleaner form for the experiments
 4. "jtay6-analysis.pdf" -> The analysis for this assignment.
