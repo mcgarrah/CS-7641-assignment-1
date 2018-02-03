@@ -75,6 +75,7 @@ adult = pd.get_dummies(adult)
 adult = adult.rename(columns=lambda x: x.replace('-', '_'))
 
 adult.to_hdf('datasets.hdf', 'adult', complib='blosc', complevel=9)
+adult.to_csv('datasets-adult.csv')
 
 # Madelon
 madX1 = pd.read_csv('./madelon_train.data', header=None, sep=' ')
@@ -87,3 +88,4 @@ madY.columns = ['Class']
 mad = pd.concat([madX, madY], 1)
 mad = mad.dropna(axis=1, how='all')
 mad.to_hdf('datasets.hdf', 'madelon', complib='blosc', complevel=9)
+mad.to_csv('datasets-madelon.csv')
