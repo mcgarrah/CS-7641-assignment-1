@@ -29,18 +29,27 @@ Library dependencies are:
  - pandas 0.22.0
  - matplotlib 2.1.2
  - tables 3.4.2
- 
+ - scipy 1.0.0
+
 Other libraries used are part of the Python standard library. 
 
 ## Contents
 
 The main folder contains the following files:
-1. adult.*, madelon_*.* -> These are the original datasets, as downloaded from the UCI Machine Learning Repository
+1. ./jtay-data adult.*, madelon_*.* ->
+   These are the original datasets, as downloaded from the UCI Machine Learning Repository
  - https://archive.ics.uci.edu/ml/datasets/adult
  - https://archive.ics.uci.edu/ml/datasets/madelon
-2. datasets.hdf -> A pre-processed/cleaned up copy of the datasets. This file is created by "parse data.py"
-3. "parse data.py" -> This python script pre-processes the original UCI ML repo files into a cleaner form for the experiments
-4. "jtay6-analysis.pdf" -> The analysis for this assignment.
+ Note: This is the original data for the base template for validation of the code.
+1. ./jmm-data parkinsons.data parkinsons_updrs.data ->
+   These are the original datasets, as downloaded from the UCI Machine Learning Repository
+ - https://archive.ics.uci.edu/ml/datasets/parkinsons
+ - https://archive.ics.uci.edu/ml/datasets/parkinsons+telemonitoring
+ Note: This is the actual data for the assignment.
+2. datasets.hdf -> A pre-processed/cleaned up copy of the datasets. This file is created by the parse-xxx-data.py code.
+   Note: Migrate the dataset.hdf manually to the root for processing.
+3. "parse-xxx-data.py" -> This python script pre-processes the original UCI ML repo files into a cleaner form for the experiments
+4. "xxx-analysis.pdf" -> The analysis for this assignment.
 5. helpers.py -> A collection of helper functions used for this assignment
 6. ANN.py -> Code for the Neural Network Experiments
 7. Boosting.py -> Code for the Boosted Tree experiments
@@ -50,9 +59,13 @@ The main folder contains the following files:
 11. plotter.py -> Code to plot the learning and validation curves in the report
 12. README.txt -> This file
 
+## Supplemental Content
+
+- Weka 3.8.2 for Windows x86-64 retrieved from https://www.cs.waikato.ac.nz/ml/weka/downloading.html Feb 2018.
+
 ## Outputs
 
-There is also a subfolder called "output". This folder contains the experimental results. 
+There is also a subfolder called "output". This folder contains the experimental results.
 
 Here, I use DT/ANN/BT/KNN/SVM_Lin/SVM_RBF to refer to decision trees, artificial neural networks, boosted trees, K-nearest neighbours, linear and RBF kernel SVMs respectively. A suffix of _OF indicates a deliberately "overfitted" version of the model where regularisation is turned off.
 
