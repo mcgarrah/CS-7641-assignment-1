@@ -28,6 +28,7 @@ Library dependencies are:
  - numpy 0.14.0
  - pandas 0.22.0
  - matplotlib 2.1.2
+ - tables 3.4.2
  
 Other libraries used are part of the Python standard library. 
 
