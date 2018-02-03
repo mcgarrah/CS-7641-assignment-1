@@ -17,7 +17,9 @@ The assignment code was originally written in Python 3.5.1 but for this assignme
 ### Python Environment
 
 - Python 3.6.0 for Windows x86-64 retrieved from https://www.python.org/downloads/windows/ Dec 2016.
-- PyCharm 2017.3.3 Professional Edition IDE
+- PyCharm 2017.3.3 Professional Edition IDE retrieved January 2018.
+- VirtualEnv used for isolating environment from other projects
+- Github account used for hosting this code and data
 
 ### Libraries
 
@@ -50,8 +52,11 @@ The main folder contains the following files:
 ## Outputs
 
 There is also a subfolder called "output". This folder contains the experimental results. 
+
 Here, I use DT/ANN/BT/KNN/SVM_Lin/SVM_RBF to refer to decision trees, artificial neural networks, boosted trees, K-nearest neighbours, linear and RBF kernel SVMs respectively. A suffix of _OF indicates a deliberately "overfitted" version of the model where regularisation is turned off.
+
 The datasets are adult/madelon referring to the two datasets used (the UCI Adult dataset and the UCI Madelon dataset)
+
 There are 83 files in this folder. They come the following types:
 1. <Algorithm>_<dataset>_reg.csv -> The validation curve tests for <algorithm> on <dataset>
 2. <Algorithn>_<dataset>_LC_train.scv -> Table of # of examples vs. CV training accuracy (for 5 folds) for <algorithm> on <dataset>. For learning curves
