@@ -14,12 +14,32 @@ This is the code for Assignment 1 for the OMSCS CS7641 Machine Learning course t
 
 The assignment code was originally written in Python 3.5.1 but for this assignment it is being run in Python 3.6.0 on Microsoft Windows using the PyCharm IDE.
 
+### Hardware and Platforms
+
+Both are running on Windows 7 Professional 64-bit Editions.
+Hardware for processing the code.
+ - Lenovo Thinkpad T460P with 32Gb RAM, SSD and i7-6820HQ 8-core
+ - Dell Precision T1650 with 16Gb RAM, SSD and i7-3770 8-core
+
+The Dell desktop is slightly faster at computational processing by about 11% overall.
+The Lenovo laptop is my primary development environment and follows me everywhere.
+
+Processor and memory access speeds seems to be the gating factor for the processing time.
+ - http://cpu.userbenchmark.com/Compare/Intel-Core-i7-6820HQ-vs-Intel-Core-i7-3770K/m43500vs1317
+
 ### Python Environment
 
+Lenovo Thinkpad
 - Python 3.6.0 for Windows x86-64 retrieved from https://www.python.org/downloads/windows/ Dec 2016.
 - PyCharm 2017.3.3 Professional Edition IDE retrieved January 2018.
 - VirtualEnv used for isolating environment from other projects
 - Github account used for hosting this code and data
+
+Dell Precision
+- Python 3.5.0 for Windows x86-64 retrieved from https://www.python.org/downloads/windows/.
+- PyCharm 2017.3.3 Professional Edition IDE retrieved January 2018.
+
+Note: I did not use the Anaconda build of Python but the python.org version.
 
 ### Libraries
 

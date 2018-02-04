@@ -5,9 +5,20 @@ Created on Tue Feb 3 14:33:51 2018
 Load the Parkinson detection dataset from C4.5 format
 into Pandas dataframe format.
 
-Provide a mechanism to export to ARFF format for Weka.
+Convert to PyTable HDF format for local large data
+management and multiple tables without a SQL db.
+
+Todo: Provide a mechanism to export to ARFF format for Weka.
+
+Google Search: "pandas to arff"
+    https://github.com/saurabhnagrecha/Pandas-to-ARFF
+    https://gist.github.com/csieber/1b330894ac057a140dc7
+    https://biggyani.blogspot.com/2014/08/converting-back-and-forth-between-weka.html
 
 Modified from jtay data parser and pangyanham work on his blog.
+
+ https://github.com/JonathanTay/CS-7641-assignment-1
+ http://blog.pangyanhan.com/posts/2017-02-15-analysis-of-the-adult-data-set-from-uci-machine-learning-repository.ipynb.html
 
 @author: mcgarrah@gmail.com
 """
@@ -45,6 +56,7 @@ park.columns = [
     'DFA',
     'spread1', 'spread2', 'PPE'
 ]
+"""
 # park.columns = ['age', 'employer', 'fnlwt', 'edu', 'edu_num', 'marital', 'occupation', 'relationship', 'race', 'sex',
 #                  'cap_gain', 'cap_loss', 'hrs', 'country', 'income']
 # Note that cap_gain > 0 => cap_loss = 0 and vice versa. Combine variables.
@@ -107,12 +119,25 @@ park.columns = [
 #     park[col] = park[col].str.strip()
 #
 # park = pd.get_dummies(park)
+"""
+
+# http://blog.pangyanhan.com/posts/2017-02-15-analysis-of-the-adult-data-set-from-uci-machine-learning-repository.ipynb.html
 
 print("Are there null values?")
 print(park.isnull().values.any())
 
 print("Print a dataframe or two...")
 print(park.head())
+
+print(park.describe())
+print(park.status.unique())
+print(park.spread1.value_counts())
+
+# Drop a column
+park.drop("PPE", axis=1, inplace=True)
+
+# set the dtype
+park.DFA = park.DFA.astype(float)
 
 park = park.rename(columns=lambda x: x.replace('-', '_'))
 
