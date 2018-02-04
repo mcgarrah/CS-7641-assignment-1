@@ -25,6 +25,7 @@ Modified from jtay data parser and pangyanham work on his blog.
 
 import pandas as pd
 import numpy as np
+from pandas2arff import pandas2arff
 
 # Preprocess with parkinson dataset
 
@@ -45,10 +46,11 @@ RPDE,D2 - Two nonlinear dynamical complexity measures
 DFA - Signal fractal scaling exponent
 spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation 
 """
+# changed the '%' to 'Percent' for the MDVP:Jitter
 park.columns = [
     'name',
     'MDVP:Fo(Hz)', 'MDVP:Fhi(Hz)', 'MDVP:Flo(Hz)',
-    'MDVP:Jitter(%)', 'MDVP:Jitter(Abs)', 'MDVP:RAP', 'MDVP:PPQ', 'Jitter:DDP',
+    'MDVP:Jitter(Percent)', 'MDVP:Jitter(Abs)', 'MDVP:RAP', 'MDVP:PPQ', 'Jitter:DDP',
     'MDVP:Shimmer', 'MDVP:Shimmer(dB)', 'Shimmer:APQ3', 'Shimmer:APQ5', 'MDVP:APQ', 'Shimmer:DDA',
     'NHR', 'HNR',
     'status',
@@ -131,19 +133,19 @@ print(park.head())
 
 print(park.describe())
 print(park.status.unique())
-print(park.spread1.value_counts())
+#print(park.spread1.value_counts())
 
 # Drop a column
-park.drop("PPE", axis=1, inplace=True)
+#park.drop("PPE", axis=1, inplace=True)
 
 # set the dtype
-park.DFA = park.DFA.astype(float)
+#park.DFA = park.DFA.astype(float)
 
 park = park.rename(columns=lambda x: x.replace('-', '_'))
 
 park.to_hdf('datasets.hdf', 'parkinsons', complib='blosc', complevel=9)
 park.to_csv('datasets-parkinsons.csv')
-
+pandas2arff(park, "datasets-parkinsons.arff")
 
 
 # parkinsons telemonitoring dataset
@@ -168,6 +170,7 @@ RPDE - A nonlinear dynamical complexity measure
 DFA - Signal fractal scaling exponent
 PPE - A nonlinear measure of fundamental frequency variation 
 """
+# change % to percent
 updrs.columns = [
     'subject#',
     'age',
@@ -175,7 +178,7 @@ updrs.columns = [
     'test_time',
     'motor_UPDRS',
     'total_UPDRS',
-    'Jitter(%)', 'Jitter(Abs)', 'Jitter:RAP', 'Jitter:PPQ5', 'Jitter:DDP',
+    'Jitter(Percent)', 'Jitter(Abs)', 'Jitter:RAP', 'Jitter:PPQ5', 'Jitter:DDP',
     'Shimmer', 'Shimmer(dB)', 'Shimmer:APQ3', 'Shimmer:APQ5', 'Shimmer:APQ11', 'Shimmer:DDA',
     'NHR', 'HNR',
     'RPDE',
@@ -193,6 +196,7 @@ updrs = updrs.rename(columns=lambda x: x.replace('-', '_'))
 
 updrs.to_hdf('datasets.hdf', 'updrs', complib='blosc', complevel=9)
 updrs.to_csv('datasets-updrs.csv')
+pandas2arff(updrs, "datasets-updrs.arff")
 
 
 
