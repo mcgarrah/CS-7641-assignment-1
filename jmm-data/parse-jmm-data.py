@@ -47,13 +47,14 @@ DFA - Signal fractal scaling exponent
 spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation 
 """
 # changed the '%' to 'Percent' for the MDVP:Jitter
+# change 'status' to 'class'
 park.columns = [
     'name',
     'MDVP:Fo(Hz)', 'MDVP:Fhi(Hz)', 'MDVP:Flo(Hz)',
     'MDVP:Jitter(Percent)', 'MDVP:Jitter(Abs)', 'MDVP:RAP', 'MDVP:PPQ', 'Jitter:DDP',
     'MDVP:Shimmer', 'MDVP:Shimmer(dB)', 'Shimmer:APQ3', 'Shimmer:APQ5', 'MDVP:APQ', 'Shimmer:DDA',
     'NHR', 'HNR',
-    'status',
+    'class',
     'RPDE', 'D2',
     'DFA',
     'spread1', 'spread2', 'PPE'
@@ -132,7 +133,8 @@ print("Print a dataframe or two...")
 print(park.head())
 
 print(park.describe())
-print(park.status.unique())
+#print(park.status.unique())
+#print(park.class.unique())
 #print(park.spread1.value_counts())
 
 # Drop a column
