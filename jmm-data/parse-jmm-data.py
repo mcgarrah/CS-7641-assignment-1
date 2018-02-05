@@ -8,15 +8,14 @@ into Pandas dataframe format.
 Convert to PyTable HDF format for local large data
 management and multiple tables without a SQL db.
 
-Todo: Provide a mechanism to export to ARFF format for Weka.
+Done: Provided a mechanism to export to ARFF format for Weka.
 
 Google Search: "pandas to arff"
-    https://github.com/saurabhnagrecha/Pandas-to-ARFF
+  * https://github.com/saurabhnagrecha/Pandas-to-ARFF
     https://gist.github.com/csieber/1b330894ac057a140dc7
     https://biggyani.blogspot.com/2014/08/converting-back-and-forth-between-weka.html
 
 Modified from jtay data parser and pangyanham work on his blog.
-
  https://github.com/JonathanTay/CS-7641-assignment-1
  http://blog.pangyanhan.com/posts/2017-02-15-analysis-of-the-adult-data-set-from-uci-machine-learning-repository.ipynb.html
 
@@ -143,9 +142,9 @@ print(park.status.unique())
 
 park = park.rename(columns=lambda x: x.replace('-', '_'))
 
-park.to_hdf('datasets.hdf', 'parkinsons', complib='blosc', complevel=9)
-park.to_csv('datasets-parkinsons.csv')
-pandas2arff(park, "datasets-parkinsons.arff")
+park.to_hdf('datasets.hdf', 'parkinsons_detect', complib='blosc', complevel=9)
+park.to_csv('datasets-parkinsons-detect.csv')
+pandas2arff(park, "datasets-parkinsons-detect.arff", wekaname="parkinsons-detect")
 
 
 # parkinsons telemonitoring dataset
@@ -194,9 +193,9 @@ print(updrs.head())
 
 updrs = updrs.rename(columns=lambda x: x.replace('-', '_'))
 
-updrs.to_hdf('datasets.hdf', 'updrs', complib='blosc', complevel=9)
-updrs.to_csv('datasets-updrs.csv')
-pandas2arff(updrs, "datasets-updrs.arff")
+updrs.to_hdf('datasets.hdf', 'parkinsons_updrs', complib='blosc', complevel=9)
+updrs.to_csv('datasets-parkinsons-updrs.csv')
+pandas2arff(updrs, "datasets-parkinsons-updrs.arff", wekaname="parkinsons-updrs")
 
 
 
